@@ -1,0 +1,21 @@
+<p>list-page works!</p>
+
+<app-searchbar
+(onSearch)="onImageSearch($event)"
+></app-searchbar>
+
+<div style="display: flex;">
+    <button class="nextbtn" (click)="setPrevPage()">Prev</button>
+    <button class="nextbtn" (click)="setNextPage()">Next</button>
+</div>
+
+<div style="overflow: scroll"
+    infiniteScroll 
+    (scrolled)="onScroll()"
+   >
+  <div *ngFor="let item of data"> 
+    <app-imgcards
+    imgUrl="{{item.largeImageURL}}"
+    ></app-imgcards>
+  </div>
+</div>
